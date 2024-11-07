@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -72,10 +73,10 @@ export function VelocityScroll({
       return () => window.removeEventListener("resize", calculateRepetitions);
     }, [children]);
 
-    const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
+    const x = useTransform(baseX, (v: number) => `${wrap(-100 / repetitions, 0, v)}%`);
 
     const directionFactor = React.useRef<number>(1);
-    useAnimationFrame((t, delta) => {
+    useAnimationFrame((t: any, delta: number) => {
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
       if (velocityFactor.get() < 0) {
