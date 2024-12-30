@@ -15,6 +15,7 @@ import { ThemeToggle } from "./Theme-toggle";
 import WordPullUp from "./ui/word-pull-up";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
 import ShimmerButton from "./ui/shimmer-button";
+import Link from "next/link";
 
 
 
@@ -99,13 +100,16 @@ export default function OrbitX() {
           <Tabs defaultValue="generate" className="space-y-6 ">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger className="" value="generate">
-                <ShimmerButton>
+                <ShimmerButton  >
+                  
                   Generate New Wallet
+                  
+
                   </ShimmerButton>
                   </TabsTrigger>
               <TabsTrigger  value="import">
                 <ShimmerButton background="blue" shimmerColor="lime">
-                  Import Wallet
+                  Import Wallets
                   </ShimmerButton>
                   </TabsTrigger>
             </TabsList>
